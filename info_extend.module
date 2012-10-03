@@ -2,11 +2,18 @@
 
 /**
  * Define expanded directives.
- * @todo: expand on this array to define properties on each directive (type, for link formats, for example)
  * @return array
  */
 function info_extend_expanded_directives() {
-  return array('compliments', 'suggests', 'recommends', 'breaks', 'conflicts', 'replaces', 'enhances');
+  return array(
+    'compliments',
+    'suggests',
+    'recommends',
+    'breaks',
+    'conflicts',
+    'replaces',
+    'enhances'
+  );
 }
 
 /**
@@ -40,6 +47,13 @@ function info_extend_format_link($type = 'project', $item) {
   switch ($type) {
     case 'project':
       return l(info_extend_format_name($item), 'http://drupal.org/project/' . $item, array('absolute' => TRUE, 'external' => TRUE, 'attributes' => array('target' => '_blank')));
+      break;
+    case 'issue':
+      $node_id = end(explode('/', $item));
+      return l('Issue #' . $node_id, 'http://drupal.org/node/' . $node_id, array('absolute' => TRUE, 'external' => TRUE, 'attributes' => array('target' => '_blank')));
+      break;
+    default:
+      break;
   }
 }
 
@@ -76,7 +90,12 @@ function info_extend_form_system_modules_alter(&$form, &$form_state, $form_id) {
         $items = array();
 
         foreach ($info[$key] as $item) {
-          $items[] = info_extend_format_link('project', $item) . ' ' . info_extend_get_status($item);
+          if (preg_match('/ \| /', $item)) {
+            $split = explode(' | ', $item);
+            $items[] = info_extend_format_link('project', $split[0]) . ' :: ' . info_extend_format_link('issue', $split[1]) . ' ' . info_extend_get_status($split[0]);
+          } else {
+            $items[] = info_extend_format_link('project', $item) . ' ' . info_extend_get_status($item);
+          }
         }
 
         if (count($items)) {
