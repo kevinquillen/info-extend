@@ -92,7 +92,7 @@ function info_extend_form_system_modules_alter(&$form, &$form_state, $form_id) {
         foreach ($info[$key] as $item) {
           if (preg_match('/ \| /', $item)) {
             $split = explode(' | ', $item);
-            $items[] = info_extend_format_link('project', $split[0]) . ' :: ' . info_extend_format_link('issue', $split[1]) . ' ' . info_extend_get_status($item);
+            $items[] = info_extend_format_link('project', $split[0]) . ' :: ' . info_extend_format_link('issue', $split[1]) . ' ' . info_extend_get_status($split[0]);
           } else {
             $items[] = info_extend_format_link('project', $item) . ' ' . info_extend_get_status($item);
           }
