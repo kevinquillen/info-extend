@@ -32,7 +32,17 @@ replaces[]
 
 enhances[]
 
-Additional formats
+Additional formats (planned)
 ==================
 
-TBD
+Special directives, like conflicts[] or breaks[], can also contain a pipe delimiter with a link after it. 
+
+For example:
+
+conflicts[] = views | http://drupal.org/node/1234567
+
+Would show up as:
+
+Conflicts with: Views (See Issue #1234567)
+
+with the issue and issue number linked to the specific issue filed for the conflict.
