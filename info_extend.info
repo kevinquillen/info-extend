@@ -1,0 +1,3 @@
+name = Info Extend
+description = Overrides the module administration page to include additional .info directives from module .info files, such as Suggests, Conflicts, Enhances, and Breaks.
+core = 7.x
