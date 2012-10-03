@@ -18,19 +18,13 @@ Would add "Suggests: Override node options" under your module in the module list
 Currently supported directives
 ==============================
 
-compliments[]
-
-suggests[]
-
-recommends[]
-
-breaks[]
-
-conflicts[]
-
-replaces[]
-
-enhances[]
+* compliments[]
+* suggests[]
+* recommends[]
+* breaks[]
+* conflicts[]
+* replaces[]
+* enhances[]
 
 Additional formats (planned)
 ==================
