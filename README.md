@@ -39,4 +39,4 @@ Would show up as:
 
 Conflicts with: Views (See Issue #1234567)
 
-with the issue and issue number linked to the specific issue filed for the conflict.
+with the issue and issue number linked to the specific issue filed for the conflict, to assist users directly to the issue queue to monitor conflict resolution progress, and partake in the debugging process.
