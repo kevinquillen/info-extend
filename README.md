@@ -15,7 +15,7 @@ suggests[] = override_node_options
 
 Would add "Suggests: Override node options" under your module in the module list, similar to Requires: directive. Modules are linked to drupal.org project page.
 
-Currently supported directives
+Currently Supported Directives
 ==============================
 
 * compliments
@@ -26,14 +26,14 @@ Currently supported directives
 * replaces
 * enhances
 
-Additional formats (planned)
-==================
+Additional Formatting
+=====================
 
 Special directives, like conflicts[] or breaks[], can also contain a pipe delimiter with a link after it. 
 
 For example:
 
-conflicts[] = views | http://drupal.org/node/1234567
+conflicts[] = views | 1234567
 
 Would show up as:
 
